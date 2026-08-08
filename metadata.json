@@ -1,0 +1,6 @@
+{
+  "name": "Aura Advisory",
+  "description": "Structuring absolute market authority and strategic UAE market entry for tier-one developers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

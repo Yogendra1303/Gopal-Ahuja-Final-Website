@@ -1,0 +1,11 @@
+sed -i 's/bg-\[#02050A\]/bg-bg-main/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/bg-\[#050505\]/bg-bg-card/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/bg-\[#0A0A0A\]/bg-bg-input/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/text-white/text-text-main/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/border-white\/10/border-border-subtle/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/border-white\/5/border-border-subtle\/50/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/border-white\/20/border-border-subtle/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/bg-[#C5A880]/bg-accent/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/text-[#C5A880]/text-accent/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/border-[#C5A880]/border-accent/g' src/pages/*.tsx src/components/*.tsx
+sed -i 's/text-zinc-400/text-text-muted/g' src/pages/*.tsx src/components/*.tsx

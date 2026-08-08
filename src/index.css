@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-main: #02050A;
+  --bg-card: #050505;
+  --bg-input: #0A0A0A;
+  --bg-subtle: rgba(255, 255, 255, 0.05);
+  --bg-subtle-hover: rgba(255, 255, 255, 0.1);
+  --text-main: #FFFFFF;
+  --text-muted: #a1a1aa;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --accent: #C5A880;
+}
+
+.light-theme {
+  --bg-main: #f4f4f5;
+  --bg-card: #e4e4e7;
+  --bg-input: #ffffff;
+  --bg-subtle: rgba(0, 0, 0, 0.05);
+  --bg-subtle-hover: rgba(0, 0, 0, 0.1);
+  --text-main: #18181b;
+  --text-muted: #52525b;
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --accent: #9b7b56;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-bg-input: var(--bg-input);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-subtle-hover: var(--bg-subtle-hover);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent: var(--accent);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-placeholder {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite linear;
+}
