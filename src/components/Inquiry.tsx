@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, X } from 'lucide-react';
-import { useEffect } from 'react';
+import { Send, X, Calendar, Mail } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface InquiryProps {
   isOpen: boolean;
@@ -8,6 +8,8 @@ interface InquiryProps {
 }
 
 export function Inquiry({ isOpen, onClose }: InquiryProps) {
+  const [activeTab, setActiveTab] = useState<'book' | 'form'>('book');
+
   // Prevent scrolling on body when drawer is open
   useEffect(() => {
     if (isOpen) {
@@ -40,77 +42,135 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
-          className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-[70] border-l border-gray-200 flex flex-col shadow-2xl"
+          className="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-white z-[70] border-l border-gray-200 flex flex-col shadow-2xl"
         >
-            <div className="flex-1 overflow-y-auto p-8 md:p-10 flex flex-col">
-              <div className="flex items-center justify-between mb-12">
-                <span className="text-[#C8102E] font-sans text-xs uppercase font-bold tracking-[0.25em]">
-                  GET IN TOUCH
-                </span>
-                <button 
-                  onClick={onClose}
-                  className="text-gray-500 hover:text-gray-900 transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
+          <div className="flex-1 overflow-y-auto p-6 md:p-8 flex flex-col">
+            
+            {/* Top Bar */}
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-[#C8102E] font-sans text-xs uppercase font-bold tracking-[0.25em]">
+                PRIVATE ADVISORY CHANNEL
+              </span>
+              <button 
+                onClick={onClose}
+                className="text-gray-400 hover:text-gray-900 transition-colors p-1 rounded-full hover:bg-gray-100"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
-              <h2 className="font-sans font-semibold text-3xl md:text-4xl text-gray-900 tracking-tighter leading-[1.1] mb-6">
-                Let's Discuss Your Investment Goals
-              </h2>
-              
-              <p className="font-sans text-sm text-gray-600 leading-relaxed mb-8">
-                Whether you're exploring investment opportunities, evaluating development land, or seeking strategic real estate guidance in Dubai, I'd be happy to discuss how I can help.
-              </p>
+            {/* Tab Switcher */}
+            <div className="flex bg-gray-100 p-1 rounded-lg mb-6 border border-gray-200">
+              <button
+                type="button"
+                onClick={() => setActiveTab('book')}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'book'
+                    ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
+                    : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
+                <Calendar size={15} className={activeTab === 'book' ? 'text-[#C8102E]' : ''} />
+                <span>Book 1-on-1 Call</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('form')}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'form'
+                    ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
+                    : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
+                <Mail size={15} className={activeTab === 'form' ? 'text-[#C8102E]' : ''} />
+                <span>Send Message</span>
+              </button>
+            </div>
 
-              <form className="space-y-6 flex-1 flex flex-col" onSubmit={(e) => {
-                e.preventDefault();
-                alert('Thank you for reaching out. I have received your inquiry.');
-                onClose();
-              }}>
-                <div>
-                  <label htmlFor="email" className="block text-gray-900 font-sans text-[10px] uppercase tracking-[0.2em] mb-3 font-semibold">
-                    YOUR EMAIL ADDRESS
-                  </label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    required
-                    className="w-full bg-white border border-gray-200 px-4 py-4 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors placeholder:text-gray-400"
-                    placeholder="Your email address"
+            {/* TAB CONTENT 1: CALENDLY BOOKING */}
+            {activeTab === 'book' && (
+              <div className="flex-1 flex flex-col">
+                <div className="mb-4">
+                  <h2 className="font-sans font-extrabold text-2xl text-gray-900 tracking-tight leading-snug">
+                    Schedule Your Consultation
+                  </h2>
+                  <p className="font-sans text-xs text-gray-500 mt-1">
+                    Select a time on Gopal Ahuja's calendar below for a 30-minute private session.
+                  </p>
+                </div>
+
+                <div className="flex-1 w-full rounded-lg border border-gray-200 overflow-hidden bg-white shadow-xs">
+                  <iframe 
+                    src="https://calendly.com/hello-gopalahuja/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=c8102e"
+                    className="w-full h-[540px] border-0"
+                    title="Schedule 1-on-1 Consultation with Gopal Ahuja"
                   />
                 </div>
+              </div>
+            )}
 
-                <div>
-                  <label htmlFor="message" className="block text-gray-900 font-sans text-[10px] uppercase tracking-[0.2em] mb-3 font-semibold">
-                    YOUR INVESTMENT GOALS (OPTIONAL)
-                  </label>
-                  <textarea 
-                    id="message" 
-                    rows={5}
-                    className="w-full bg-white border border-gray-200 px-4 py-4 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors resize-none placeholder:text-gray-400"
-                    placeholder="Tell me about your investment goals or how I can help."
-                  ></textarea>
-                </div>
+            {/* TAB CONTENT 2: INQUIRY FORM */}
+            {activeTab === 'form' && (
+              <div className="flex-1 flex flex-col">
+                <h2 className="font-sans font-semibold text-2xl md:text-3xl text-gray-900 tracking-tight leading-snug mb-3">
+                  Let's Discuss Your Investment Goals
+                </h2>
+                
+                <p className="font-sans text-xs text-gray-600 leading-relaxed mb-6">
+                  Whether you're exploring investment opportunities, evaluating development land, or seeking strategic guidance in Dubai, leave your details below.
+                </p>
 
-                <div className="mt-auto pt-8">
-                  <button type="submit" className="group w-full flex items-center justify-center gap-3 bg-[#C8102E] text-white px-8 py-4 uppercase tracking-widest text-xs font-bold transition-all duration-300 hover:bg-red-700 cursor-pointer">
-                    <Send size={14} className="transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                    SEND INQUIRY
-                  </button>
-                </div>
-              </form>
-            </div>
-            
-            <div className="px-8 py-6 border-t border-gray-200 flex items-center justify-between">
-              <span className="text-gray-500 font-sans text-[10px] uppercase tracking-widest">
-                SECURE ADVISORY CHANNEL
-              </span>
-              <span className="text-gray-500 font-sans text-[10px] uppercase tracking-widest">
-                © 2026 UTC
-              </span>
-            </div>
-          </motion.div>
+                <form className="space-y-5 flex-1 flex flex-col" onSubmit={(e) => {
+                  e.preventDefault();
+                  alert('Thank you for reaching out. I have received your inquiry.');
+                  onClose();
+                }}>
+                  <div>
+                    <label htmlFor="email" className="block text-gray-900 font-sans text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold">
+                      YOUR EMAIL ADDRESS
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      required
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors placeholder:text-gray-400 rounded-sm"
+                      placeholder="Your email address"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-gray-900 font-sans text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold">
+                      YOUR INVESTMENT GOALS (OPTIONAL)
+                    </label>
+                    <textarea 
+                      id="message" 
+                      rows={5}
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors resize-none placeholder:text-gray-400 rounded-sm"
+                      placeholder="Tell me about your investment goals or how I can help."
+                    ></textarea>
+                  </div>
+
+                  <div className="mt-auto pt-6">
+                    <button type="submit" className="group w-full flex items-center justify-center gap-3 bg-[#C8102E] text-white px-8 py-4 uppercase tracking-widest text-xs font-bold transition-all duration-300 hover:bg-red-700 cursor-pointer shadow-sm">
+                      <Send size={14} className="transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                      SEND INQUIRY
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
+          </div>
+          
+          <div className="px-8 py-4 border-t border-gray-200 flex items-center justify-between bg-gray-50">
+            <span className="text-gray-500 font-sans text-[10px] uppercase tracking-widest">
+              SECURE ADVISORY CHANNEL
+            </span>
+            <span className="text-gray-500 font-sans text-[10px] uppercase tracking-widest">
+              © 2026 UTC
+            </span>
+          </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

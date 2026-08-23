@@ -6,10 +6,9 @@ import { Footer } from '../components/Footer';
 import { MarketIntelligence } from '../components/MarketIntelligence';
 import { ScrollExpansionVideo } from '../components/ui/scroll-expansion-video';
 import MeetGopalAhujaSection from '../components/MeetGopalAhuja';
+import ScheduleConsultationSection from '../components/ScheduleConsultation';
 import ExpertiseServicesSection from '../components/ExpertiseServicesSection';
 import { HeroMeshWrapper } from '../components/ui/hero-section-with-smooth-bg-shader';
-
-
 
 export function Home() {
   useEffect(() => {
@@ -73,6 +72,7 @@ export function Home() {
         </div>
 
         <MeetGopalAhujaSection />
+        <ScheduleConsultationSection />
         <ExpertiseServicesSection />
 
         {/* D. Track Record (Glass Gallery) */}
