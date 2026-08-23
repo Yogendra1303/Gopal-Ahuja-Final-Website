@@ -29,7 +29,7 @@ const videoBriefs = [
     title: "What Every Investor Should Know Before Buying",
     label: "EXPERT ANALYSIS",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2940&auto=format&fit=crop",
-    video: "/assets/AG4.MOV"
+    video: "/assets/vi1.mp4"
   },
   {
     id: 5,

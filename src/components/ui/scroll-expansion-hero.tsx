@@ -37,7 +37,7 @@ export function ScrollExpansionHero() {
 
   const isMobileState = windowSize.width < 768;
   const baseWidth = isMobileState ? windowSize.width * 0.9 : Math.min(1152, windowSize.width * 0.95);
-  const baseHeight = baseWidth / 2.39; // 2.39:1 CinemaScope ratio
+  const baseHeight = baseWidth / 2.39; // Original 2.39:1 CinemaScope ratio
   
   const currentWidth = baseWidth + (scrollProgress * (windowSize.width - baseWidth));
   const currentHeight = baseHeight + (scrollProgress * (windowSize.height - baseHeight));
@@ -68,7 +68,7 @@ export function ScrollExpansionHero() {
           {isPlaying ? (
             <video
               ref={videoRef}
-              src="/assets/GA1.mp4"
+              src="/assets/LPV 1.MP4"
               controls
               autoPlay
               className="w-full h-full object-cover"
@@ -76,8 +76,8 @@ export function ScrollExpansionHero() {
           ) : (
             <>
               <img 
-                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2940&auto=format&fit=crop" 
-                alt="Architectural overview" 
+                src="/assets/video_thumbnail.jpeg" 
+                alt="Gopal Ahuja Video Thumbnail" 
                 className="object-cover w-full h-full"
               />
               

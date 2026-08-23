@@ -32,7 +32,7 @@ export function ScrollExpansionVideo() {
         {isPlaying ? (
           <video
             ref={videoRef}
-            src="/assets/GA1.mp4"
+            src="/assets/LPV 1.MP4"
             controls
             autoPlay
             className="w-full h-full object-cover"
@@ -40,8 +40,8 @@ export function ScrollExpansionVideo() {
         ) : (
           <>
             <img 
-              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2940&auto=format&fit=crop" 
-              alt="Dubai Real Estate Overview" 
+              src="/assets/video_thumbnail.jpeg" 
+              alt="Gopal Ahuja Video Thumbnail" 
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
             />
             
@@ -61,3 +61,4 @@ export function ScrollExpansionVideo() {
     </div>
   );
 }
+
