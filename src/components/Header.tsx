@@ -5,6 +5,7 @@ import { Menu, X, FileText } from "lucide-react";
 export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAdvisoryOpen, setIsAdvisoryOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<'message' | 'book'>('message');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -111,7 +112,7 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
           isScrolled ? 'bg-[#0F172A]/95 backdrop-blur-md shadow-md border-b border-slate-800' : 'bg-[#0F172A] border-b border-slate-800/80'
         }`}
       >
-        <a href="#/" className="z-50 flex items-center gap-2.5 text-white text-lg font-bold tracking-widest uppercase group">
+        <a href="/" className="z-50 flex items-center gap-2.5 text-white text-lg font-bold tracking-widest uppercase group">
           <span className="inline-flex items-center justify-center overflow-hidden rounded-[2px] shadow-sm w-[23px] h-[16px] border border-white/20 shrink-0" title="United Arab Emirates">
             <svg viewBox="0 0 600 300" className="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="100" fill="#007A3D"/>
@@ -125,9 +126,9 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
 
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-12">
           {[
-            { route: 'home', label: 'Home', href: '#/' },
-            { route: 'insights', label: 'Insights', href: '#/insights' },
-            { route: 'about', label: 'About Us', href: '#/about' }
+            { route: 'home', label: 'Home', href: '/' },
+            { route: 'insights', label: 'Insights', href: '/insights' },
+            { route: 'about', label: 'About Us', href: '/about' }
           ].map((link) => (
             <a
               key={link.route}
@@ -178,9 +179,9 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
 
             <nav className="flex flex-col gap-8 text-center relative z-10">
               {[
-                { route: 'home', label: 'Home', href: '#/' },
-                { route: 'insights', label: 'Insights', href: '#/insights' },
-                { route: 'about', label: 'About Us', href: '#/about' }
+                { route: 'home', label: 'Home', href: '/' },
+                { route: 'insights', label: 'Insights', href: '/insights' },
+                { route: 'about', label: 'About Us', href: '/about' }
               ].map((link) => (
                 <a
                   key={link.route}
@@ -221,23 +222,23 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.16, ease: "easeOut" }}
-              className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col z-[101]"
+              className="fixed right-0 top-0 h-full w-full max-w-md bg-[#0F172A] shadow-2xl flex flex-col z-[101] border-l border-white/5"
             >
               <div className='flex flex-col h-full overflow-y-auto p-6 md:p-8 relative'>
-                <button onClick={handleCloseModal} className='absolute top-4 right-4 p-2 text-gray-400 hover:text-[#C8102E] transition-colors bg-gray-50 hover:bg-gray-100 rounded-full cursor-pointer'>
+                <button onClick={handleCloseModal} className='absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 rounded-full cursor-pointer'>
                   <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' /></svg>
                 </button>
 
                 {isSubmitted ? (
                   /* SUCCESS STATE */
                   <div className="my-auto flex flex-col items-center text-center py-8">
-                    <div className="w-16 h-16 bg-[#0D6323]/10 text-[#0D6323] rounded-full flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 bg-[#0D6323]/20 text-[#0D6323] rounded-full flex items-center justify-center mb-6 border border-[#0D6323]/30">
                       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl text-black font-extrabold tracking-tight mb-3">Thank You</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-8 max-w-sm">
+                    <h3 className="text-2xl text-white font-extrabold tracking-tight mb-3">Thank You</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
                       Your inquiry has been received successfully. Gopal personally reviews every inquiry and will get back to you shortly.
                     </p>
                     <button
@@ -259,24 +260,65 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                   /* PREMIUM ADVISORY OPTIONS & FORM SCREEN */
                   <>
                     <span className='text-[#C8102E] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-2 block mt-2'>GET IN TOUCH</span>
-                    <h2 className='text-black text-2xl md:text-3xl font-extrabold tracking-tight mb-2'>Let's Discuss Your Investment Goals</h2>
-                    <p className='text-gray-600 text-xs md:text-sm leading-relaxed mb-4'>
+                    <h2 className='text-white text-2xl md:text-3xl font-extrabold tracking-tight mb-2'>Let's Discuss Your Investment Goals</h2>
+                    <p className='text-gray-400 text-xs md:text-sm leading-relaxed mb-6'>
                       Whether you're exploring investment opportunities, evaluating development land, or seeking strategic real estate guidance in Dubai, I'd be happy to discuss how I can help.
                     </p>
 
-                    {/* TRUST STATEMENT */}
-                    <div className="flex items-center gap-2.5 mb-6 p-3 bg-gray-50 border border-gray-150 rounded-sm">
-                      <span className="w-2 h-2 rounded-full bg-[#0D6323] shrink-0" />
-                      <p className="text-xs text-gray-700 font-medium leading-snug">
-                        Every inquiry is reviewed personally by Gopal Ahuja.
-                      </p>
+                    {/* TAB SWITCHER */}
+                    <div className="flex bg-white/5 p-1.5 rounded-md mb-6 border border-[#C8102E]/30 gap-1">
+                      <button
+                        type="button"
+                        onClick={() => setActiveTab('message')}
+                        className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                          activeTab === 'message'
+                            ? 'bg-white/10 text-[#C8102E] shadow-md border border-[#C8102E]'
+                            : 'text-gray-500 hover:text-white border border-transparent hover:border-gray-500'
+                        }`}
+                      >
+                        <span>Send Message</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveTab('book')}
+                        className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                          activeTab === 'book'
+                            ? 'bg-white/10 text-[#C8102E] shadow-md border border-[#C8102E]'
+                            : 'text-gray-500 hover:text-white border border-transparent hover:border-gray-500'
+                        }`}
+                      >
+                        <span>Book a Call</span>
+                      </button>
                     </div>
 
-                    <div className="space-y-4 mb-6">
+                    {activeTab === 'book' && (
+                      <div className="flex-1 w-full rounded-xl border border-white/10 overflow-hidden shadow-sm relative min-h-[350px] bg-[#0F172A] mb-6">
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-500 -z-10">
+                          <span className="text-xs uppercase tracking-widest font-bold">Loading Calendar...</span>
+                        </div>
+                        <iframe 
+                          src="https://calendly.com/hello-gopalahuja/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=0F172A&text_color=ffffff&primary_color=c8102e"
+                          className="w-full h-full min-h-[350px] border-0 relative z-10"
+                          title="Schedule 1-on-1 Consultation with Gopal Ahuja"
+                        />
+                      </div>
+                    )}
+
+                    {activeTab === 'message' && (
+                      <div className="flex flex-col animate-in fade-in duration-300">
+                        {/* TRUST STATEMENT */}
+                        <div className="flex items-center gap-2.5 mb-6 p-3 bg-white/5 border border-white/10 rounded-sm">
+                          <span className="w-2 h-2 rounded-full bg-[#0D6323] shrink-0" />
+                          <p className="text-xs text-gray-300 font-medium leading-snug">
+                            Every inquiry is reviewed personally by Gopal Ahuja.
+                          </p>
+                        </div>
+
+                        <div className="space-y-4 mb-6">
                       {/* OPTION 1: WHATSAPP (PRIMARY) */}
-                      <div className="p-4 border border-gray-200 rounded-md bg-white hover:border-[#25D366] transition-colors">
-                        <h4 className="text-sm font-bold text-gray-900 mb-1">Chat on WhatsApp</h4>
-                        <p className="text-xs text-gray-500 mb-3 leading-relaxed">Connect directly with Gopal for investment discussions and quick questions.</p>
+                      <div className="p-4 border border-white/10 rounded-md bg-white/5 hover:border-[#25D366]/50 transition-colors">
+                        <h4 className="text-sm font-bold text-white mb-1">Chat on WhatsApp</h4>
+                        <p className="text-xs text-gray-400 mb-3 leading-relaxed">Connect directly with Gopal for investment discussions and quick questions.</p>
                         <a
                           href={`https://wa.me/971585952912?text=${whatsappMessage}`}
                           target="_blank"
@@ -289,16 +331,16 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                       </div>
 
                       {/* OPTION 2: DEVELOPER & FUND INQUIRY (SECONDARY) */}
-                      <div className="p-4 border border-gray-200 rounded-md bg-white hover:border-gray-400 transition-colors">
-                        <h4 className="text-sm font-bold text-gray-900 mb-1">Developer & Fund Inquiry</h4>
-                        <p className="text-xs text-gray-500 mb-3 leading-relaxed">For developers, family offices, institutional investors, and strategic partnerships.</p>
+                      <div className="p-4 border border-white/10 rounded-md bg-white/5 hover:border-white/20 transition-colors">
+                        <h4 className="text-sm font-bold text-white mb-1">Developer & Fund Inquiry</h4>
+                        <p className="text-xs text-gray-400 mb-3 leading-relaxed">For developers, family offices, institutional investors, and strategic partnerships.</p>
                         <a
                           href="https://docs.google.com/forms/d/e/1FAIpQLSejc0Afplc4AzZaLNZ7OkZBEzh86VDRwTwB5D5krI0JdpXj8w/viewform"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full flex items-center justify-center gap-2 bg-white border border-[#D1D5DB] text-gray-800 font-bold py-2.5 rounded-sm hover:bg-gray-50 transition-all text-xs uppercase tracking-wider shadow-sm"
+                          className="w-full flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white font-bold py-2.5 rounded-sm hover:bg-white/10 transition-all text-xs uppercase tracking-wider shadow-sm"
                         >
-                          <FileText size={16} className="text-gray-600" />
+                          <FileText size={16} className="text-gray-300" />
                           Open Inquiry Form
                         </a>
                       </div>
@@ -306,9 +348,9 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
 
                     {/* DIVIDER FOR OPTION 3 */}
                     <div className='flex items-center gap-4 mb-5'>
-                      <hr className='flex-grow border-gray-200' />
-                      <span className='text-[10px] text-gray-400 font-bold uppercase tracking-widest'>OR SEND A DIRECT MESSAGE</span>
-                      <hr className='flex-grow border-gray-200' />
+                      <hr className='flex-grow border-white/10' />
+                      <span className='text-[10px] text-gray-500 font-bold uppercase tracking-widest'>OR SEND A DIRECT MESSAGE</span>
+                      <hr className='flex-grow border-white/10' />
                     </div>
 
                     {/* OPTION 3: SIMPLIFIED FORM */}
@@ -322,7 +364,7 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                         onChange={(e) => setFormName(e.target.value)}
                         onBlur={() => setNameTouched(true)}
                         placeholder='Your Name'
-                        className={`w-full bg-[#F9FAFB] border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all rounded-sm ${nameTouched && !isNameValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1' : 'border-gray-200 text-black focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
+                        className={`w-full bg-white/5 border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all rounded-sm placeholder:text-gray-500 ${nameTouched && !isNameValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1 text-white' : 'border-white/10 text-white focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
                       />
                       {nameTouched && !isNameValid && (
                         <span className="text-red-500 text-xs mb-3 font-medium">Please enter your name.</span>
@@ -337,7 +379,7 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                         onChange={(e) => setFormEmail(e.target.value)}
                         onBlur={() => setEmailTouched(true)}
                         placeholder='Your email address'
-                        className={`w-full bg-[#F9FAFB] border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all rounded-sm ${emailTouched && !isEmailValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1' : 'border-gray-200 text-black focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
+                        className={`w-full bg-white/5 border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all rounded-sm placeholder:text-gray-500 ${emailTouched && !isEmailValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1 text-white' : 'border-white/10 text-white focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
                       />
                       {emailTouched && !isEmailValid && (
                         <span className="text-red-500 text-xs mb-3 font-medium">Please enter a valid email address.</span>
@@ -356,7 +398,7 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                         onBlur={() => setMessageTouched(true)}
                         placeholder='Briefly describe your investment goals or inquiry.'
                         rows={3}
-                        className={`w-full bg-[#F9FAFB] border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all min-h-[80px] resize-none rounded-sm ${messageTouched && !isMessageValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1' : 'border-gray-200 text-black focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
+                        className={`w-full bg-white/5 border px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-all min-h-[80px] resize-none rounded-sm placeholder:text-gray-500 ${messageTouched && !isMessageValid ? 'border-red-500 focus:border-red-500 focus:ring-red-500 mb-1 text-white' : 'border-white/10 text-white focus:border-[#C8102E] focus:ring-[#C8102E] mb-3'}`}
                       />
                       {messageTouched && !isMessageValid && formMessage.trim().length > 0 && (
                         <span className="text-red-500 text-xs mb-3 font-medium">Please enter a message.</span>
@@ -370,17 +412,19 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </button>
 
-                      <p className="text-[11px] text-gray-400 mt-3 text-center leading-normal">
-                        Your information is kept confidential and will only be used to respond to your inquiry.
-                      </p>
-                    </form>
-                  </>
-                )}
+                        <p className="text-[11px] text-gray-400 mt-3 text-center leading-normal">
+                          Your information is kept confidential and will only be used to respond to your inquiry.
+                        </p>
+                      </form>
+                    </div>
+                  )}
+                </>
+              )}
 
                 {/* DRAWER FOOTER / SOCIAL LINKS */}
                 <div className='mt-auto pt-6 w-full'>
-                  <div className='border-t border-gray-100 pt-5 flex flex-col items-center'>
-                    <span className='text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-3'>Connect with Gopal</span>
+                  <div className='border-t border-white/10 pt-5 flex flex-col items-center'>
+                    <span className='text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-3'>Connect with Gopal</span>
                     <div className='flex items-center gap-6'>
                       {/* LinkedIn */}
                       <a href='https://www.linkedin.com/in/gopal-ahuja-a3521b14' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-[#C8102E] transition-colors'>

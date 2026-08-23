@@ -8,7 +8,7 @@ interface InquiryProps {
 }
 
 export function Inquiry({ isOpen, onClose }: InquiryProps) {
-  const [activeTab, setActiveTab] = useState<'book' | 'form'>('book');
+  const [activeTab, setActiveTab] = useState<'form' | 'book'>('form');
 
   // Prevent scrolling on body when drawer is open
   useEffect(() => {
@@ -60,36 +60,36 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
             </div>
 
             {/* Tab Switcher */}
-            <div className="flex bg-gray-100 p-1 rounded-lg mb-6 border border-gray-200">
-              <button
-                type="button"
-                onClick={() => setActiveTab('book')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  activeTab === 'book'
-                    ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
-                    : 'text-gray-500 hover:text-gray-900'
-                }`}
-              >
-                <Calendar size={15} className={activeTab === 'book' ? 'text-[#C8102E]' : ''} />
-                <span>Book 1-on-1 Call</span>
-              </button>
+            <div className="flex bg-gray-100 p-1 rounded-lg mb-6 border border-[#C8102E]/30 gap-1">
               <button
                 type="button"
                 onClick={() => setActiveTab('form')}
                 className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   activeTab === 'form'
-                    ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
-                    : 'text-gray-500 hover:text-gray-900'
+                    ? 'bg-white text-gray-900 shadow-sm border border-[#C8102E]'
+                    : 'text-gray-500 hover:text-gray-900 border border-transparent hover:border-gray-300'
                 }`}
               >
                 <Mail size={15} className={activeTab === 'form' ? 'text-[#C8102E]' : ''} />
                 <span>Send Message</span>
               </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('book')}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'book'
+                    ? 'bg-white text-gray-900 shadow-sm border border-[#C8102E]'
+                    : 'text-gray-500 hover:text-gray-900 border border-transparent hover:border-gray-300'
+                }`}
+              >
+                <Calendar size={15} className={activeTab === 'book' ? 'text-[#C8102E]' : ''} />
+                <span>Book 1-on-1</span>
+              </button>
             </div>
 
             {/* TAB CONTENT 1: CALENDLY BOOKING */}
             {activeTab === 'book' && (
-              <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex flex-col h-full min-h-[450px]">
                 <div className="mb-4">
                   <h2 className="font-sans font-extrabold text-2xl text-gray-900 tracking-tight leading-snug">
                     Schedule Your Consultation
@@ -99,10 +99,15 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
                   </p>
                 </div>
 
-                <div className="flex-1 w-full rounded-lg border border-gray-200 overflow-hidden bg-white shadow-xs">
+                <div className="flex-1 w-full rounded-xl border border-gray-200 overflow-hidden shadow-sm relative min-h-[400px] max-h-[500px] bg-[#0b0b0b]">
+                  {/* Loading placeholder just in case it takes time */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 -z-10">
+                    <Calendar size={24} className="mb-2 opacity-50" />
+                    <span className="text-xs uppercase tracking-widest font-bold">Loading Calendar...</span>
+                  </div>
                   <iframe 
-                    src="https://calendly.com/hello-gopalahuja/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=c8102e"
-                    className="w-full h-[540px] border-0"
+                    src="https://calendly.com/hello-gopalahuja/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=c8102e&theme=dark"
+                    className="w-full h-full min-h-[400px] border-0 relative z-10"
                     title="Schedule 1-on-1 Consultation with Gopal Ahuja"
                   />
                 </div>

@@ -54,20 +54,20 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-none bg-zinc-700" />
-                <a href="#/" className="text-white/70 text-sm hover:text-white transition-colors font-sans">Home</a>
+                <a href="/" className="text-white/70 text-sm hover:text-white transition-colors font-sans">Home</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-none bg-zinc-700" />
-                <a href="#/insights" className="text-white/70 text-sm hover:text-white transition-colors font-sans">Insights</a>
+                <a href="/insights" className="text-white/70 text-sm hover:text-white transition-colors font-sans">Insights</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-none bg-zinc-700" />
-                <a href="#/about" className="text-white/70 text-sm hover:text-white transition-colors font-sans">About Us</a>
+                <a href="/about" className="text-white/70 text-sm hover:text-white transition-colors font-sans">About Us</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-none bg-zinc-700" />
                 <a 
-                  href="#/" 
+                  href="/" 
                   onClick={(e) => { 
                     e.preventDefault(); 
                     window.dispatchEvent(new CustomEvent('openContactDrawer')); 
@@ -93,8 +93,8 @@ export function Footer() {
               </div>
               <div className="flex flex-row gap-3">
                 <Mail size={20} className="text-white/70 shrink-0" />
-                <a href="mailto:gopal@homeviewdubai.com" className="text-white/70 text-sm font-sans hover:text-white transition-colors">
-                  gopal@homeviewdubai.com
+                <a href="mailto:hello@gopalahuja.com" className="text-white/70 text-sm font-sans hover:text-white transition-colors">
+                  hello@gopalahuja.com
                 </a>
               </div>
               <div className="flex flex-row gap-3">

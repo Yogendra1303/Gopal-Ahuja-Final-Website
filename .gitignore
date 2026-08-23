@@ -5,3 +5,14 @@ dist/
 .env.*.local
 .DS_Store
 *.log
+
+/src/generated/prisma
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Database
+dev.db
+dev.db-journal
