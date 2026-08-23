@@ -37,7 +37,7 @@ export function ScrollExpansionHero() {
 
   const isMobileState = windowSize.width < 768;
   const baseWidth = isMobileState ? windowSize.width * 0.9 : Math.min(1152, windowSize.width * 0.95);
-  const baseHeight = baseWidth / 2.39; // Original 2.39:1 CinemaScope ratio
+  const baseHeight = baseWidth / (16 / 9); // 16:9 ratio matching screenshot
   
   const currentWidth = baseWidth + (scrollProgress * (windowSize.width - baseWidth));
   const currentHeight = baseHeight + (scrollProgress * (windowSize.height - baseHeight));
