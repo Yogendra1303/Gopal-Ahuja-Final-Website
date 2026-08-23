@@ -72,7 +72,6 @@ export function Home() {
         </div>
 
         <MeetGopalAhujaSection />
-        <ScheduleConsultationSection />
         <ExpertiseServicesSection />
 
         {/* D. Track Record (Glass Gallery) */}
@@ -213,6 +212,7 @@ export function Home() {
         </section>
       </div>
       
+      <ScheduleConsultationSection />
       <Footer />
     </main>
   );
