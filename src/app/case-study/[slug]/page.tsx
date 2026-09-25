@@ -196,7 +196,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
               <a
                 href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20have%20been%20reading%20your%20market%20research%20and%20would%20like%20to%20discuss%20investment%20opportunities%20in%20Dubai."
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-[#C8102E] font-bold text-xs uppercase tracking-widest hover:text-red-700 transition-colors"
               >
                 Schedule a Conversation &rarr;

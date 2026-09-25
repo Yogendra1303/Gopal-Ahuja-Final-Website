@@ -157,7 +157,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
               <a
                 href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20just%20finished%20reading%20your%20article%20and%20would%20like%20to%20discuss%20my%20investment%20requirements%20in%20Dubai."
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-[#C8102E] font-bold text-xs uppercase tracking-widest hover:text-red-700 transition-colors"
               >
                 Contact Gopal &rarr;

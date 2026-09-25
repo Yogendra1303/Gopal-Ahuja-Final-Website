@@ -46,7 +46,7 @@ export default function Home() {
           <a 
             href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20would%20like%20to%20discuss%20expanding%20my%20real%20estate%20investments%20in%20Dubai.%20Please%20let%20me%20know%20a%20convenient%20time%20to%20connect."
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             className='w-[90%] sm:w-auto group bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-[11px] sm:text-xs uppercase tracking-[0.2em] px-8 py-4 sm:py-3.5 rounded-full transition-all shadow-[0_10px_25px_-5px_rgba(200,16,46,0.4)] hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer'
           >
             Plan Your Expansion <span className='group-hover:translate-x-1 transition-transform duration-200'>&rarr;</span>
@@ -180,7 +180,7 @@ export default function Home() {
               <a 
                 href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20would%20like%20to%20discuss%20my%20investment%20strategy%20and%20understand%20how%20you%20can%20help%20me%20invest%20in%20Dubai."
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className='w-full sm:w-auto bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-xs sm:text-sm uppercase tracking-widest px-8 sm:px-10 py-4 rounded-full transition-all shadow-md hover:shadow-xl flex items-center justify-center gap-3'
               >
                 Discuss Your Strategy <span className='text-lg leading-none'>&rarr;</span>

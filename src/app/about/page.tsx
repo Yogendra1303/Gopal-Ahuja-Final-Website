@@ -657,7 +657,7 @@ export default function About() {
               <a 
                 href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20would%20like%20to%20schedule%20a%20strategy%20call%20to%20discuss%20my%20Dubai%20investment%20plans."
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white px-9 py-4 font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
               >
                 Schedule Strategy Call &rarr;

@@ -40,7 +40,7 @@ export default function MeetGopalAhujaSection() {
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSejc0Afplc4AzZaLNZ7OkZBEzh86VDRwTwB5D5krI0JdpXj8w/viewform"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className='w-full sm:w-auto bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-xs uppercase tracking-widest px-8 py-4 sm:py-3.5 rounded-full transition-all shadow-md hover:shadow-xl text-center inline-block'
             >
               For Developers & Funds
@@ -48,7 +48,7 @@ export default function MeetGopalAhujaSection() {
             <a
               href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%27m%20interested%20in%20exploring%20real%20estate%20investment%20opportunities%20in%20Dubai.%20I%20would%20like%20to%20schedule%20a%20consultation."
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className='w-full sm:w-auto bg-transparent border border-gray-300 hover:border-black text-black hover:bg-black hover:text-white font-bold text-xs uppercase tracking-widest px-8 py-4 sm:py-3.5 rounded-full transition-all text-center inline-block shadow-sm'
             >
               For Private Investors

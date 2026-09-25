@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: RouteParams): Promise<Metadat
   return {
         title: caseStudy.title + ' | Gopal Ahuja',
         description: caseStudy.description,
+        alternates: {
+            canonical: `/case-study/${slug}`,
+        }
   }
 }
 

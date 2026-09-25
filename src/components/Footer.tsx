@@ -37,13 +37,13 @@ export function Footer() {
               Helping global developers and private investors build wealth through strategic real estate acquisitions in Dubai.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/gopal-ahuja-a3521b14" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
+              <a href="https://www.linkedin.com/in/gopal-ahuja-a3521b14" target="_blank" rel="nofollow noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
                 <LinkedinIcon />
               </a>
-              <a href="https://www.facebook.com/share/1atk9euc6d/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
+              <a href="https://www.facebook.com/share/1atk9euc6d/" target="_blank" rel="nofollow noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com/gopalahujaa?igsh=aGo2bDNpcnN4eXFq" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
+              <a href="https://www.instagram.com/gopalahujaa?igsh=aGo2bDNpcnN4eXFq" target="_blank" rel="nofollow noopener noreferrer" className="text-white/70 hover:text-white transition-colors cursor-pointer w-5 h-5">
                 <InstagramIcon />
               </a>
             </div>

@@ -28,7 +28,7 @@ export const WhatsAppButton = () => {
       <motion.a
         href="https://wa.me/971585952912"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="nofollow noopener noreferrer"
         initial={{ x: '50%' }} // Show half
         animate={{ 
           x: isHovered ? '-16px' : 'calc(100% - 24px)', // Hide mostly, peek 24px when not hovered. When hovered, pull out fully with 16px margin.

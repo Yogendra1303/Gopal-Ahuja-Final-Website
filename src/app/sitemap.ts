@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { articles } from '@/data/articleData'
+import { articles, caseStudies } from '@/data/articleData'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -23,12 +23,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const dynamicRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+  const dynamicArticles: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `https://www.gopalahuja.com/insights/${article.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...dynamicRoutes]
+  const dynamicCaseStudies: MetadataRoute.Sitemap = caseStudies.map((caseStudy) => ({
+    url: `https://www.gopalahuja.com/case-study/${caseStudy.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  return [...staticRoutes, ...dynamicArticles, ...dynamicCaseStudies]
 }

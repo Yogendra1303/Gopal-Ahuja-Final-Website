@@ -625,7 +625,7 @@ export default function Insights() {
                 <a
                   href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20have%20been%20reading%20your%20market%20research%20and%20would%20like%20to%20discuss%20investment%20opportunities%20in%20Dubai."
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className='w-full bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-xs uppercase tracking-widest px-6 py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-auto'
                 >
                   Discuss This Market &rarr;
