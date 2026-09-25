@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   }
 }
 
+import { GlobalLeadCapture } from '@/components/GlobalLeadCapture'
+
 export default function RootLayout({
   children,
 }: {
@@ -38,6 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
       <body className="bg-white text-gray-900 antialiased selection:bg-[#C8102E] selection:text-white">
         {children}
+        <GlobalLeadCapture />
       </body>
     </html>
   )

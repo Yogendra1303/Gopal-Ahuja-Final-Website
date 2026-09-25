@@ -110,15 +110,25 @@ export function MarketIntelligence() {
               </span>
               <h3 className="text-black font-bold text-xl sm:text-2xl mb-4 leading-snug text-balance">{report.title}</h3>
               <p className="text-gray-600 mb-8 leading-relaxed flex-grow text-sm md:text-base">{report.desc}</p>
-              <a 
-                href={report.pdfUrl}
-                download={report.filename}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#C8102E] font-bold text-xs uppercase tracking-widest group-hover:text-red-700 transition-colors w-max"
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const event = new CustomEvent('openLeadCapture', { 
+                    detail: { 
+                      title: report.title, 
+                      description: 'Enter your details below to download this exclusive market intelligence report.',
+                      intent: `Download Report: ${report.title}`,
+                      fileUrl: report.pdfUrl,
+                      filename: report.filename,
+                      isNewsletter: false
+                    } 
+                  });
+                  window.dispatchEvent(event);
+                }}
+                className="inline-flex items-center gap-2 text-[#C8102E] font-bold text-xs uppercase tracking-widest group-hover:text-red-700 transition-colors w-max cursor-pointer"
               >
                 Download Report &darr;
-              </a>
+              </button>
             </div>
           ))}
         </div>

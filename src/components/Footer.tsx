@@ -115,10 +115,23 @@ export function Footer() {
               className="flex w-full border border-white/20 bg-[#000000] group focus-within:border-[#C8102E]/50 transition-colors" 
               onSubmit={(e) => {
                 e.preventDefault();
-                window.dispatchEvent(new CustomEvent('openContactDrawer'));
+                const form = e.target as HTMLFormElement;
+                const emailInput = form.elements.namedItem('email') as HTMLInputElement;
+                const emailValue = emailInput?.value || '';
+
+                const event = new CustomEvent('openLeadCapture', { 
+                  detail: { 
+                    title: 'Join the Exclusive List', 
+                    description: 'Receive quarterly market models and exclusive off-market property targets.',
+                    intent: 'Newsletter Subscription',
+                    isNewsletter: true,
+                    defaultEmail: emailValue
+                  } 
+                });
+                window.dispatchEvent(event);
               }}
             >
-              <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" className="w-full bg-transparent px-4 py-3 font-sans text-[10px] tracking-widest text-white outline-none placeholder:text-white/70 uppercase rounded-none" />
+              <input name="email" type="email" placeholder="ENTER YOUR EMAIL ADDRESS" className="w-full bg-transparent px-4 py-3 font-sans text-[10px] tracking-widest text-white outline-none placeholder:text-white/70 uppercase rounded-none" />
               <button type="submit" className="px-5 border-l border-white/20 bg-white/5 hover:bg-[#C8102E] transition-colors flex items-center justify-center text-white/70 hover:text-white rounded-none cursor-pointer">
                 <span className="text-lg leading-none">&rarr;</span>
               </button>

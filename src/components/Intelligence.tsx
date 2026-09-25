@@ -36,16 +36,26 @@ export function Intelligence() {
               </p>
               
               <div className="border-t border-gray-200 pt-6 mt-6">
-                <a 
-                  href={report.fileUrl}
-                  download={report.filename}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-[#C8102E] hover:text-red-700 transition-colors"
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const event = new CustomEvent('openLeadCapture', { 
+                      detail: { 
+                        title: report.title, 
+                        description: 'Enter your details below to download this exclusive insight report.',
+                        intent: `Download Report: ${report.title}`,
+                        fileUrl: report.fileUrl,
+                        filename: report.filename,
+                        isNewsletter: false
+                      } 
+                    });
+                    window.dispatchEvent(event);
+                  }}
+                  className="flex items-center gap-2 text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-[#C8102E] hover:text-red-700 transition-colors cursor-pointer"
                 >
                   <Download size={12} />
                   <span>{report.downloadText}</span>
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
