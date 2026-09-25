@@ -28,17 +28,17 @@ export default function Home() {
           </span>
 
           {/* Unified, Premium Headline */}
-          <h1 className='w-full flex flex-col items-center justify-center text-center mb-4 gap-2'>
-            <span className='text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-slate-950 drop-shadow-xs'>
-              Dubai Real Estate <span className='text-[115%] inline-block'>Investment</span>
+          <h1 className='w-full flex flex-col items-center justify-center text-center mb-6 sm:mb-4 gap-1 sm:gap-2 px-4'>
+            <span className='text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-950 drop-shadow-xs text-balance'>
+              Dubai Real Estate <span className='text-[105%] sm:text-[115%] inline-block'>Investment</span>
             </span>
-            <span className='text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 drop-shadow-xs'>
+            <span className='text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-900 drop-shadow-xs text-balance'>
               & Strategic Advisory.
             </span>
           </h1>
 
           {/* Protected Subheadline */}
-          <p className='text-slate-900 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-6 font-semibold text-center'>
+          <p className='text-slate-900 text-sm sm:text-base md:text-lg max-w-[90%] sm:max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-6 font-semibold text-center text-balance'>
             I help global investors make confident real estate decisions in Dubai through local expertise, strategic guidance, and trusted execution.
           </p>
 
@@ -47,7 +47,7 @@ export default function Home() {
             href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20would%20like%20to%20discuss%20expanding%20my%20real%20estate%20investments%20in%20Dubai.%20Please%20let%20me%20know%20a%20convenient%20time%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
-            className='group bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-xs uppercase tracking-[0.2em] px-7 py-3.5 rounded-full transition-all shadow-[0_10px_25px_-5px_rgba(200,16,46,0.4)] hover:shadow-xl flex items-center gap-2 cursor-pointer'
+            className='w-[90%] sm:w-auto group bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-[11px] sm:text-xs uppercase tracking-[0.2em] px-8 py-4 sm:py-3.5 rounded-full transition-all shadow-[0_10px_25px_-5px_rgba(200,16,46,0.4)] hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer'
           >
             Plan Your Expansion <span className='group-hover:translate-x-1 transition-transform duration-200'>&rarr;</span>
           </a>
@@ -74,18 +74,18 @@ export default function Home() {
         <ExpertiseServicesSection />
 
         {/* D. Track Record (Glass Gallery) */}
-        <section id="portfolio" className="w-full bg-[#FFFFFF] py-20 md:py-24 border-b border-gray-100 relative">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <section id="portfolio" className="w-full bg-[#FFFFFF] py-16 sm:py-24 border-b border-gray-100 relative">
+          <div className="max-w-7xl mx-auto px-5 sm:px-12">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="p-8 md:p-12 bg-[#F9FAFB] border border-gray-200 rounded-xl"
+              className="p-6 sm:p-12 bg-[#F9FAFB] border border-gray-200 rounded-2xl"
             >
               <div className="mb-10">
-                <h2 className="text-3xl md:text-5xl text-black font-extrabold tracking-tight mb-4">Featured Engagements</h2>
-                <p className="text-gray-600 text-base md:text-lg max-w-3xl leading-relaxed">
+                <h2 className="text-3xl md:text-5xl text-black font-extrabold tracking-tight mb-4 text-balance">Featured Engagements</h2>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed text-balance">
                   A selection of strategic advisory engagements that demonstrate how I help investors, developers, and private clients navigate complex real estate decisions across Dubai.
                 </p>
               </div>
@@ -118,18 +118,18 @@ export default function Home() {
 
 
         {/* Client Success / Testimonials */}
-        <section className='w-full bg-[#F9FAFB] py-20 md:py-24 px-6 md:px-12 border-t border-gray-200'>
+        <section className='w-full bg-[#F9FAFB] py-16 sm:py-24 px-5 sm:px-12 border-t border-gray-200'>
           <div className='max-w-7xl mx-auto'>
             
             {/* Section Header */}
-            <div className='text-center max-w-3xl mx-auto mb-16'>
-              <span className='text-[#C8102E] text-xs font-bold tracking-widest uppercase mb-4 block'>
+            <div className='text-center max-w-3xl mx-auto mb-12 sm:mb-16'>
+              <span className='text-[#C8102E] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4 block'>
                 CLIENT TESTIMONIALS
               </span>
-              <h2 className='text-black text-3xl md:text-5xl font-extrabold tracking-tight mb-6'>
+              <h2 className='text-black text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-balance'>
                 Trusted by Investors Who Value Expertise.
               </h2>
-              <p className='text-gray-600 text-base md:text-lg leading-relaxed'>
+              <p className='text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed text-balance'>
                 Hear directly from investors, developers, and business leaders who have experienced my advisory approach and trusted me to guide their real estate decisions in Dubai.
               </p>
             </div>
@@ -176,12 +176,12 @@ export default function Home() {
             </div>
 
             {/* High-Intent Conversion CTA */}
-            <div className='flex justify-center'>
+            <div className='flex justify-center w-full mt-6 sm:mt-0'>
               <a 
                 href="https://wa.me/971585952912?text=Hello%20Gopal%2C%20I%20would%20like%20to%20discuss%20my%20investment%20strategy%20and%20understand%20how%20you%20can%20help%20me%20invest%20in%20Dubai."
                 target="_blank"
                 rel="noopener noreferrer"
-                className='bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-full transition-all shadow-md hover:shadow-xl flex items-center gap-3'
+                className='w-full sm:w-auto bg-[#C8102E] hover:bg-[#a60d24] text-white font-bold text-xs sm:text-sm uppercase tracking-widest px-8 sm:px-10 py-4 rounded-full transition-all shadow-md hover:shadow-xl flex items-center justify-center gap-3'
               >
                 Discuss Your Strategy <span className='text-lg leading-none'>&rarr;</span>
               </a>
@@ -191,7 +191,7 @@ export default function Home() {
         </section>
 
         {/* F. The Inner Circle (Newsletter) */}
-        <section className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 md:px-12 text-center relative border-b border-gray-100">
+        <section className="w-full bg-[#FFFFFF] py-16 sm:py-24 px-5 sm:px-12 text-center relative border-b border-gray-100">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,13 +199,13 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <span className="font-sans text-[#C8102E] text-[10px] md:text-[11px] font-medium tracking-[0.3em] uppercase mb-6 block">PRIVATE INVESTOR BRIEFING</span>
-            <h2 className="text-4xl md:text-5xl text-black font-extrabold mb-4 tracking-[-0.02em] leading-[1.1]">Exclusive Insights. Delivered Monthly.</h2>
-            <p className="text-gray-500 font-light text-base md:text-lg mb-10 tracking-[0.02em] max-w-2xl md:max-w-3xl mx-auto">Join a community of investors receiving curated market intelligence, off-market opportunities, and strategic analysis before they're widely available.</p>
+            <span className="font-sans text-[#C8102E] text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase mb-4 sm:mb-6 block">PRIVATE INVESTOR BRIEFING</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-extrabold mb-4 tracking-[-0.02em] leading-[1.1] text-balance">Exclusive Insights. Delivered Monthly.</h2>
+            <p className="text-gray-500 font-normal text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-[90%] sm:max-w-2xl md:max-w-3xl mx-auto text-balance">Join a community of investors receiving curated market intelligence, off-market opportunities, and strategic analysis before they're widely available.</p>
             
-            <div className="flex flex-col sm:flex-row w-full max-w-lg mx-auto mt-10 bg-white border border-gray-200 p-0 rounded-none relative z-10 focus-within:border-[#C8102E] transition-colors">
-              <input type="email" placeholder="Enter your email address" className="flex-1 bg-white text-gray-900 px-6 py-4 outline-none font-sans text-xs md:text-sm font-medium tracking-normal placeholder:text-gray-400 rounded-none border-none" />
-              <button className="bg-[#C8102E] text-white px-8 py-4 font-bold uppercase tracking-[0.2em] hover:bg-red-700 transition-colors duration-300 rounded-none">Join Now</button>
+            <div className="flex flex-col sm:flex-row w-full max-w-lg mx-auto mt-6 sm:mt-10 bg-white border border-gray-200 p-1 rounded-2xl relative z-10 focus-within:border-[#C8102E] transition-colors shadow-sm">
+              <input type="email" placeholder="Enter your email address" className="flex-1 bg-white text-gray-900 px-6 py-4 outline-none font-sans text-xs sm:text-sm font-medium tracking-normal placeholder:text-gray-400 rounded-t-2xl sm:rounded-l-2xl sm:rounded-tr-none border-none" />
+              <button className="bg-[#C8102E] text-white px-8 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-red-700 transition-colors duration-300 rounded-b-xl sm:rounded-r-xl sm:rounded-bl-none w-full sm:w-auto">Join Now</button>
             </div>
           </motion.div>
         </section>

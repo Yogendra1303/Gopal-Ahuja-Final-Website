@@ -36,18 +36,18 @@ export default function ExpertiseServicesSection() {
   ];
 
   return (
-    <section className='w-full bg-[#FFFFFF] py-20 md:py-24 px-6 md:px-12 border-b border-gray-100'>
+    <section className='w-full bg-[#FFFFFF] py-16 sm:py-24 px-5 sm:px-12 border-b border-gray-100'>
       <div className='max-w-7xl mx-auto'>
         
         {/* SECTION HEADER */}
-        <div className='max-w-3xl mb-16'>
-          <span className='text-[#C8102E] text-xs font-bold tracking-widest uppercase mb-4 block'>
+        <div className='max-w-3xl mb-12 sm:mb-16'>
+          <span className='text-[#C8102E] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4 block'>
             Strategic Advisory
           </span>
-          <h2 className='text-black text-4xl md:text-5xl font-extrabold tracking-tight mb-6'>
+          <h2 className='text-black text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-balance'>
             How I Help You Invest Smarter
           </h2>
-          <p className='text-gray-600 text-lg leading-relaxed'>
+          <p className='text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed text-balance'>
             Every investment is backed by local intelligence, strategic advisory, and end-to-end execution.
           </p>
         </div>
@@ -59,16 +59,16 @@ export default function ExpertiseServicesSection() {
               key={service.id}
               customSize={true}
               glowColor='red'
-              className='!block !shadow-sm bg-[#F9FAFB] border border-gray-100 p-8 md:p-10 !rounded-xl z-10 overflow-hidden'
+              className='!block !shadow-sm bg-[#F9FAFB] border border-gray-100 p-8 md:p-10 !rounded-2xl z-10 overflow-hidden'
             >
               <div className='relative z-20 flex flex-col h-full'>
-                <span className='text-[#C8102E] font-bold text-sm tracking-widest mb-6 block'>
+                <span className='text-[#C8102E] font-bold text-xs sm:text-sm tracking-widest mb-6 block'>
                   {service.id}
                 </span>
-                <h3 className='text-xl md:text-2xl font-bold text-gray-900 mb-4'>
+                <h3 className='text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4'>
                   {service.title}
                 </h3>
-                <p className='text-gray-600 leading-relaxed font-normal'>
+                <p className='text-gray-600 leading-relaxed font-normal text-sm sm:text-base'>
                   {service.description}
                 </p>
               </div>

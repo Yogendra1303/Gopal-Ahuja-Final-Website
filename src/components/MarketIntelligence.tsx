@@ -94,10 +94,10 @@ export function MarketIntelligence() {
 
   return (
     <>
-      <section id="insights" className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto mb-16 text-center md:text-left">
-          <h2 className="text-black font-extrabold text-4xl md:text-5xl tracking-tight mb-6">Market Insights</h2>
-          <p className="text-gray-600 text-lg max-w-3xl leading-relaxed">
+      <section id="insights" className="w-full bg-[#FFFFFF] py-16 sm:py-24 px-5 sm:px-12 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto mb-12 sm:mb-16 text-center md:text-left">
+          <h2 className="text-black font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4 sm:mb-6 text-balance">Market Insights</h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed text-balance mx-auto md:mx-0">
             Explore proprietary research, market intelligence, and strategic analysis designed to help investors and developers make informed decisions in Dubai's real estate market.
           </p>
         </div>
@@ -105,10 +105,10 @@ export function MarketIntelligence() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {reports.map((report, idx) => (
             <div key={idx} className="bg-white border border-gray-200 p-8 md:p-10 rounded-md hover:border-[#C8102E] transition-colors shadow-sm flex flex-col group">
-              <span className="text-[#C8102E] font-bold text-xs tracking-widest uppercase mb-4 block">
+              <span className="text-[#C8102E] font-bold text-[10px] sm:text-xs tracking-widest uppercase mb-4 block">
                 {report.label}
               </span>
-              <h3 className="text-black font-bold text-2xl mb-4 leading-snug">{report.title}</h3>
+              <h3 className="text-black font-bold text-xl sm:text-2xl mb-4 leading-snug text-balance">{report.title}</h3>
               <p className="text-gray-600 mb-8 leading-relaxed flex-grow text-sm md:text-base">{report.desc}</p>
               <a 
                 href={report.pdfUrl}
@@ -124,10 +124,10 @@ export function MarketIntelligence() {
         </div>
       </section>
 
-      <section className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 md:px-12 border-b border-gray-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto mb-16 text-center">
-          <h2 className="text-black font-extrabold text-4xl md:text-5xl tracking-tight mb-6">Insights from Gopal Ahuja</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+      <section className="w-full bg-[#FFFFFF] py-16 sm:py-24 px-5 sm:px-12 border-b border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto mb-12 sm:mb-16 text-center">
+          <h2 className="text-black font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4 sm:mb-6 text-balance">Insights from Gopal Ahuja</h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed text-balance">
             I share market analysis, investment strategies, and practical insights to help you navigate Dubai's real estate market with confidence.
           </p>
         </div>

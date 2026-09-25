@@ -190,16 +190,16 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.16, ease: "easeOut" }}
-            className="fixed inset-0 z-40 bg-[#0A1830]/95 flex flex-col justify-center items-center px-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 z-40 bg-[#0F172A]/98 backdrop-blur-2xl flex flex-col justify-center items-center px-6"
           >
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#C8102E]/5 blur-[120px] rounded-none pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#C8102E]/5 blur-[120px] rounded-none pointer-events-none" />
 
-            <nav className="flex flex-col gap-8 text-center relative z-10">
+            <nav className="flex flex-col gap-8 text-center relative z-10 w-full max-w-sm">
               {[
                 { route: 'home', label: 'Home', href: '/' },
                 { route: 'insights', label: 'Insights', href: '/insights' },
@@ -209,19 +209,21 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
                   key={link.route}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-medium tracking-wide relative inline-block mx-auto pb-1.5 transition-colors ${
-                    activeRoute === link.route ? 'text-white font-bold border-b-2 border-[#C8102E]' : 'text-white/80 hover:text-white'
+                  className={`text-3xl font-bold tracking-tight relative inline-block mx-auto pb-1.5 transition-colors ${
+                    activeRoute === link.route ? 'text-white border-b-2 border-[#C8102E]' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {link.label}
                 </a>
               ))}
-              <span 
-                className="font-sans border border-[#C8102E] text-white hover:bg-[#C8102E] px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest mt-6 cursor-pointer inline-block mx-auto transition-all duration-250 shadow-sm" 
-                onClick={() => { setIsMobileMenuOpen(false); setIsSubmitted(false); setIsAdvisoryOpen(true); }}
-              >
-                Contact Gopal
-              </span>
+              <div className="mt-8">
+                <span 
+                  className="w-full flex items-center justify-center border border-[#C8102E] text-white bg-[#C8102E] hover:bg-red-700 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest cursor-pointer transition-all duration-250 shadow-md" 
+                  onClick={() => { setIsMobileMenuOpen(false); setIsSubmitted(false); setIsAdvisoryOpen(true); }}
+                >
+                  Contact Gopal
+                </span>
+              </div>
             </nav>
           </motion.div>
         )}
@@ -243,8 +245,8 @@ export function Header({ activeRoute = 'home' }: { activeRoute?: string }) {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ duration: 0.16, ease: "easeOut" }}
-              className="fixed right-0 top-0 h-full w-full max-w-md bg-[#0F172A] shadow-2xl flex flex-col z-[101] border-l border-white/5"
+              transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed right-0 top-0 h-full w-full sm:w-[450px] max-w-[100vw] bg-[#0F172A] shadow-2xl flex flex-col z-[101] border-l border-white/5"
             >
               <div className='flex flex-col h-full overflow-y-auto p-6 md:p-8 relative'>
                 <button onClick={handleCloseModal} className='absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 rounded-full cursor-pointer'>
