@@ -23,7 +23,7 @@ export function ScrollExpansionVideo() {
   };
 
   return (
-    <div ref={containerRef} className="w-full max-w-5xl md:max-w-[1116px] mx-auto relative -mt-44 md:-mt-56 z-20 aspect-video shadow-2xl px-4 md:px-0">
+    <div ref={containerRef} className="w-[92%] sm:w-[95%] md:w-full max-w-5xl md:max-w-[1116px] mx-auto relative -mt-44 md:-mt-56 z-20 aspect-video shadow-2xl">
       <motion.div 
         style={{ scale, borderRadius }}
         className="w-full h-full relative overflow-hidden bg-black border border-white/20 group cursor-pointer shadow-2xl"

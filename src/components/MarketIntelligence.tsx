@@ -142,7 +142,7 @@ export function MarketIntelligence() {
           </p>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto relative h-[600px] flex items-center justify-center mb-12">
+        <div className="w-full max-w-7xl mx-auto relative h-[450px] md:h-[600px] flex items-center justify-center mb-12">
           <div className="relative w-full h-full flex items-center justify-center">
             <AnimatePresence mode="popLayout">
               {videoBriefs.map((brief, index) => {
@@ -161,20 +161,24 @@ export function MarketIntelligence() {
                 let zIndex = 50;
                 let scale = 1;
 
+                // Create responsive offsets using percentages that are tighter on mobile
+                // On mobile we reduce the horizontal spread significantly to prevent overflow
+                const xOffsetBase = typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 40;
+                
                 if (normalizedOffset === 0) {
                   x = 0; y = 0; rotate = 0; zIndex = 40; scale = 1;
                 } else if (normalizedOffset === 1) {
-                  x = 40; y = 8; rotate = 3; zIndex = 30; scale = 0.95;
+                  x = xOffsetBase; y = 8; rotate = 3; zIndex = 30; scale = 0.95;
                 } else if (normalizedOffset === -1) {
-                  x = -40; y = 8; rotate = -3; zIndex = 30; scale = 0.95;
+                  x = -xOffsetBase; y = 8; rotate = -3; zIndex = 30; scale = 0.95;
                 } else if (normalizedOffset === 2) {
-                  x = 80; y = 24; rotate = 6; zIndex = 20; scale = 0.85;
+                  x = xOffsetBase * 2; y = 24; rotate = 6; zIndex = 20; scale = 0.85;
                 } else if (normalizedOffset === -2) {
-                  x = -80; y = 24; rotate = -6; zIndex = 20; scale = 0.85;
+                  x = -(xOffsetBase * 2); y = 24; rotate = -6; zIndex = 20; scale = 0.85;
                 } else if (normalizedOffset === 3) {
-                  x = 120; y = 48; rotate = 12; zIndex = 10; scale = 0.75;
+                  x = xOffsetBase * 3; y = 48; rotate = 12; zIndex = 10; scale = 0.75;
                 } else if (normalizedOffset === -3) {
-                  x = -120; y = 48; rotate = -12; zIndex = 10; scale = 0.75;
+                  x = -(xOffsetBase * 3); y = 48; rotate = -12; zIndex = 10; scale = 0.75;
                 }
 
                 const handleCardClick = () => {

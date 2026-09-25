@@ -11,7 +11,7 @@ export function HeroMeshWrapper({
 }: HeroMeshWrapperProps) {
   return (
     <section 
-      className={`relative w-full overflow-hidden flex flex-col items-center pt-28 md:pt-30 pb-60 md:pb-72 px-6 bg-[#A8A8A8] ${className}`}
+      className={`relative w-full overflow-hidden flex flex-col items-center pt-28 md:pt-30 pb-64 md:pb-72 px-6 bg-[#A8A8A8] ${className}`}
     >
       {/* Plain Silver Background Canvas */}
       <div className='absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-[#B4B4B4] via-[#A8A8A8] to-[#9E9E9E] pointer-events-none' />

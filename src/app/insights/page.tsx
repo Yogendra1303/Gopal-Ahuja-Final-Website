@@ -350,7 +350,7 @@ export default function Insights() {
               </div>
 
               {/* Interactive Input Zone */}
-              <div className="p-8 pb-4">
+              <div className="p-5 md:p-8 pb-4 md:pb-4">
                 {/* Asset Tier Selector */}
                 <div className="mb-8 relative">
                   <label className="font-sans text-gray-500 text-[10px] tracking-widest uppercase mb-3 block">01 // Select Asset Tier</label>
@@ -420,7 +420,7 @@ export default function Insights() {
               </div>
 
               {/* The Financial Ledger */}
-              <div className="bg-white p-8 border-t border-gray-200 rounded-none">
+              <div className="bg-white p-5 md:p-8 border-t border-gray-200 rounded-none">
                 <div className="flex justify-between items-end border-b border-dashed border-gray-200 py-3">
                   <span className="text-gray-500 text-sm">Base Construction (NSA)</span>
                   <span className="font-sans text-gray-900 text-sm">{formatCurrency(baseNsa)}</span>

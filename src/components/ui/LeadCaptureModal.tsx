@@ -97,7 +97,7 @@ export function LeadCaptureModal({
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
-            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 sm:p-10 overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 sm:p-10 overflow-hidden"
           >
             {status === 'success' ? (
               <div className="text-center py-8">
