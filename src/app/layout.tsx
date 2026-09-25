@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 }
 
 import { GlobalLeadCapture } from '@/components/GlobalLeadCapture'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 
 export default function RootLayout({
   children,
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className="bg-white text-gray-900 antialiased selection:bg-[#C8102E] selection:text-white">
         {children}
         <GlobalLeadCapture />
+        <WhatsAppButton />
       </body>
     </html>
   )
