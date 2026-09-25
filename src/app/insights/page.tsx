@@ -266,15 +266,25 @@ export default function Insights() {
                     {report.desc}
                   </p>
                 </div>
-                <a 
-                  href={report.pdfUrl}
-                  download={report.filename}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-[#C8102E] text-xs font-bold tracking-[0.2em] uppercase hover:text-red-700 transition-colors mt-auto w-max"
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const event = new CustomEvent('openLeadCapture', { 
+                      detail: { 
+                        title: report.title, 
+                        description: 'Enter your email address below to download this exclusive research report.',
+                        intent: `Download Report: ${report.title}`,
+                        fileUrl: report.pdfUrl,
+                        filename: report.filename,
+                        isNewsletter: false
+                      } 
+                    });
+                    window.dispatchEvent(event);
+                  }}
+                  className="inline-flex items-center gap-2 font-sans text-[#C8102E] text-xs font-bold tracking-[0.2em] uppercase hover:text-red-700 transition-colors mt-auto w-max cursor-pointer"
                 >
                   Explore Research &rarr;
-                </a>
+                </button>
               </motion.div>
             ))}
           </div>
