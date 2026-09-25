@@ -25,7 +25,6 @@ export function LeadCaptureModal({
   isNewsletter = false,
   defaultEmail = ''
 }: LeadCaptureModalProps) {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState(defaultEmail);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -44,7 +43,7 @@ export function LeadCaptureModal({
       const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, intent }),
+        body: JSON.stringify({ email, intent }),
       });
 
       if (!response.ok) {
@@ -66,7 +65,6 @@ export function LeadCaptureModal({
           setTimeout(() => {
             onClose();
             setStatus('idle');
-            setName('');
             setEmail('');
           }, 1000);
         }, 1000);
@@ -75,7 +73,6 @@ export function LeadCaptureModal({
         setTimeout(() => {
           onClose();
           setStatus('idle');
-          setName('');
           setEmail('');
         }, 2500);
       }
@@ -141,27 +138,15 @@ export function LeadCaptureModal({
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="sr-only">Full Name</label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      placeholder="Full Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C8102E]/20 focus:border-[#C8102E] transition-all text-sm"
-                    />
-                  </div>
-                  <div>
                     <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
                       id="email"
                       type="email"
                       required
-                      placeholder="Email Address"
+                      placeholder="Enter your email address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C8102E]/20 focus:border-[#C8102E] transition-all text-sm"
+                      className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C8102E]/20 focus:border-[#C8102E] transition-all text-sm text-gray-900 placeholder:text-gray-400"
                     />
                   </div>
                   

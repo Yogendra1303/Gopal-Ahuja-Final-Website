@@ -6,11 +6,11 @@ const resend = new Resend(process.env.RESEND_API_KEY || process.env.ResendAPIKey
 
 export async function POST(req: Request) {
   try {
-    const { name, email, intent } = await req.json();
+    const { email, intent } = await req.json();
 
-    if (!name || !email) {
+    if (!email) {
       return NextResponse.json(
-        { error: 'Name and email are required' },
+        { error: 'Email is required' },
         { status: 400 }
       );
     }
@@ -24,7 +24,6 @@ export async function POST(req: Request) {
         <p>A user has just submitted their details to access exclusive content or join the newsletter.</p>
         <br/>
         <p><strong>Intent / Action:</strong> ${intent}</p>
-        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
       `,
     });
