@@ -9,6 +9,9 @@ interface InquiryProps {
 
 export function Inquiry({ isOpen, onClose }: InquiryProps) {
   const [activeTab, setActiveTab] = useState<'form' | 'book'>('form');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Prevent scrolling on body when drawer is open
   useEffect(() => {
@@ -125,10 +128,30 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
                   Whether you're exploring investment opportunities, evaluating development land, or seeking strategic guidance in Dubai, leave your details below.
                 </p>
 
-                <form className="space-y-5 flex-1 flex flex-col" onSubmit={(e) => {
+                <form className="space-y-5 flex-1 flex flex-col" onSubmit={async (e) => {
                   e.preventDefault();
-                  alert('Thank you for reaching out. I have received your inquiry.');
-                  onClose();
+                  if (!email || !message) return;
+                  
+                  setIsSubmitting(true);
+                  try {
+                    const response = await fetch('/api/contact', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ email, message }),
+                    });
+                    
+                    if (!response.ok) throw new Error('Failed to send');
+                    
+                    alert('Thank you for reaching out. I have received your inquiry.');
+                    setEmail('');
+                    setMessage('');
+                    onClose();
+                  } catch (error) {
+                    console.error('Error:', error);
+                    alert('Failed to send message. Please try again.');
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}>
                   <div>
                     <label htmlFor="email" className="block text-gray-900 font-sans text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold">
@@ -138,6 +161,8 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
                       type="email" 
                       id="email" 
                       required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-white border border-gray-200 px-4 py-3.5 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors placeholder:text-gray-400 rounded-sm"
                       placeholder="Your email address"
                     />
@@ -149,6 +174,9 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
                     </label>
                     <textarea 
                       id="message" 
+                      required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       rows={5}
                       className="w-full bg-white border border-gray-200 px-4 py-3.5 text-gray-900 font-sans text-sm focus:outline-none focus:border-[#C8102E] transition-colors resize-none placeholder:text-gray-400 rounded-sm"
                       placeholder="Tell me about your investment goals or how I can help."
@@ -156,9 +184,9 @@ export function Inquiry({ isOpen, onClose }: InquiryProps) {
                   </div>
 
                   <div className="mt-auto pt-6">
-                    <button type="submit" className="group w-full flex items-center justify-center gap-3 bg-[#C8102E] text-white px-8 py-4 uppercase tracking-widest text-xs font-bold transition-all duration-300 hover:bg-red-700 cursor-pointer shadow-sm">
+                    <button type="submit" disabled={isSubmitting} className="group w-full flex items-center justify-center gap-3 bg-[#C8102E] text-white px-8 py-4 uppercase tracking-widest text-xs font-bold transition-all duration-300 hover:bg-red-700 cursor-pointer shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
                       <Send size={14} className="transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                      SEND INQUIRY
+                      {isSubmitting ? 'SENDING...' : 'SEND INQUIRY'}
                     </button>
                   </div>
                 </form>
