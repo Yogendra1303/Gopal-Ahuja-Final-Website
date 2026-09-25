@@ -21,8 +21,26 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
 
   const otherStudy = caseStudies.find(cs => cs.slug !== caseStudy.slug);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: caseStudy.title,
+    description: caseStudy.description,
+    author: {
+      '@type': 'Person',
+      name: caseStudy.author,
+    },
+    datePublished: caseStudy.date,
+    image: caseStudy.image,
+  };
+
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Header activeRoute="" />
 
       {/* Hero Section */}

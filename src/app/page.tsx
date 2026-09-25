@@ -14,8 +14,26 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Gopal Ahuja | Strategic Real Estate Advisory',
+    description: 'Independent market analysis, private portfolio advisory, and capital allocation insights for high-net-worth real estate investors in Dubai and the GCC.',
+    url: 'https://www.gopalahuja.com',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2940&auto=format&fit=crop',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Dubai',
+      addressCountry: 'UAE'
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header activeRoute="home" />
 
       <div className="relative z-10">

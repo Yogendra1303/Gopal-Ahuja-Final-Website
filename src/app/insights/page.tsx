@@ -60,8 +60,20 @@ export default function Insights() {
   const hardPct = (baseNsa / tdc) * 100;
   const softPct = (softCost / tdc) * 100;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Market Insights & Forecasting',
+    description: 'Expert research, market trends, and financial modeling for Dubai real estate investments.',
+    url: 'https://www.gopalahuja.com/insights'
+  };
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900 relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header activeRoute="insights" />
       <div className="relative z-10">
         {/* Page Header */}
@@ -74,9 +86,15 @@ export default function Insights() {
             <div className="border-l-2 border-[#C8102E] pl-6 mb-6">
               <span className="font-sans text-[#C8102E] text-[10px] md:text-[11px] font-semibold tracking-[0.3em] uppercase block">Intelligence // 02 — Data & Analytics</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-gray-900 max-w-4xl border-l-2 border-transparent pl-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-gray-900 max-w-4xl border-l-2 border-transparent pl-6 leading-[1.1] mb-6">
               Market Insights & Forecasting.
             </h1>
+            <p className="text-lg md:text-xl text-gray-600 font-light max-w-3xl border-l-2 border-transparent pl-6 leading-relaxed mb-4">
+              Institutional-grade research for private capital. Explore our latest market yields, development economics, and structural trends shaping the next cycle of ultra-luxury and premium real estate across Dubai and the broader GCC.
+            </p>
+            <p className="text-base text-gray-500 font-light max-w-3xl border-l-2 border-transparent pl-6 leading-relaxed">
+              From evaluating the historical performance of prime waterfront assets on Palm Jumeirah and Jumeirah Bay Island to forecasting capital inflow vectors, our insights provide a definitive edge. Understand the underlying metrics — price-to-rent ratios, development margins, and sovereign wealth allocations — that separate speculative noise from sustained value creation.
+            </p>
           </motion.div>
         </section>
 

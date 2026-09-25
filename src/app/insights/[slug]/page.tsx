@@ -20,8 +20,25 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
 
   const relatedArticles = articles.filter(a => a.slug !== resolvedParams.slug).slice(0, 3);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+    },
+    datePublished: article.date,
+    image: article.image,
+  };
+
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header activeRoute="insights" />
 
       {/* Hero Section */}

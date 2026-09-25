@@ -197,8 +197,20 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Gopal Ahuja',
+    description: 'Learn about Gopal Ahuja’s advisory approach for Dubai real estate, including investment analysis, developer evaluation, and strategic execution.',
+    url: 'https://www.gopalahuja.com/about'
+  };
+
   return (
     <main className="min-h-screen bg-[#FFFFFF] text-gray-900 relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header activeRoute="about" />
 
       <div className="relative z-10">

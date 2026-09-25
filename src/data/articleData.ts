@@ -571,9 +571,9 @@ export const caseStudies: CaseStudy[] = [
     ],
     content: [
       { type: 'heading', text: 'Executive Summary' },
-      { type: 'paragraph', text: 'In early 2025, a mid-sized European real estate development fund approached me to evaluate the viability of entering the Dubai market. The fund, with approximately €1.2 billion in assets under management across Germany, the Netherlands, and Poland, had no prior exposure to the GCC region. Their investment committee had identified Dubai as a strategic diversification target but lacked the local knowledge, regulatory understanding, and on-ground network required to execute confidently.' },
-      { type: 'paragraph', text: 'Over a 14-month engagement, I provided end-to-end strategic advisory — from initial market assessment and regulatory structuring through to asset identification, due diligence, negotiation, and transaction execution. The fund ultimately deployed AED 380 million across three distinct asset classes: prime residential, Grade A commercial, and development-stage land.' },
-      { type: 'paragraph', text: 'This case study documents the advisory approach, the challenges encountered, and the strategic rationale behind each allocation decision.' },
+      { type: 'paragraph', text: 'In early 2025, a European real estate fund asked me to help them enter the Dubai market. The fund manages €1.2 billion in assets in Europe. They had no experience in the GCC region. Their committee saw Dubai as a great diversification target. However, they lacked local knowledge and regulatory understanding.' },
+      { type: 'paragraph', text: 'Over 14 months, I provided end-to-end strategic advisory. I helped with market assessment, asset identification, and transaction execution. Ultimately, the fund deployed AED 380 million across three asset classes: prime residential, commercial, and development land.' },
+      { type: 'paragraph', text: 'This case study outlines the advisory approach, challenges, and strategic reasoning behind each decision.' },
 
       { type: 'divider' },
 
@@ -696,8 +696,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     content: [
       { type: 'heading', text: 'Executive Summary' },
-      { type: 'paragraph', text: 'In Q3 2024, a prominent GCC-based family office engaged me to develop and execute a waterfront real estate strategy for Dubai. The family — with diversified holdings across energy, hospitality, and financial services — sought to rebalance their real estate allocation from predominantly commercial assets in Riyadh and Abu Dhabi towards ultra-luxury residential in Dubai, capitalising on what they identified as a structural repricing of Dubai\'s waterfront corridor.' },
-      { type: 'paragraph', text: 'Over 18 months, I advised on the assembly of a seven-asset portfolio valued at AED 520 million, concentrated across three of Dubai\'s most prestigious waterfront locations: Palm Jumeirah, Jumeirah Bay Island, and Dubai Harbour. The portfolio was designed to deliver both generational wealth preservation and attractive current yields through a combination of branded residences, legacy villas, and pre-completion inventory.' },
+      { type: 'paragraph', text: 'In Q3 2024, a GCC-based family office hired me to create a waterfront real estate strategy for Dubai. The family wanted to shift their real estate focus. They moved from commercial assets in Riyadh and Abu Dhabi to ultra-luxury residential properties in Dubai.' },
+      { type: 'paragraph', text: 'Over 18 months, I advised on building a seven-asset portfolio worth AED 520 million. The properties are located in Palm Jumeirah, Jumeirah Bay Island, and Dubai Harbour. The portfolio combines branded residences, legacy villas, and pre-completion inventory. This mix aims to preserve wealth and generate attractive yields.' },
 
       { type: 'divider' },
 
